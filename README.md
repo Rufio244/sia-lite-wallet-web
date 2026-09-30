@@ -1,5 +1,5 @@
 # 💎 Rufio Sia Wallet — Extended
-# เจ้าของ: Rufio244 | USBPUM #AGI244
+# เจ้าของ: Rufio244 | USBPUM 
 # เพิ่ม: ผู้ใช้ • กระเป๋าย่อย • TPS • บัตรดิจิทัล
 
 ## เริ่มต้น
