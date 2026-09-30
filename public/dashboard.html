@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>กระเป๋าของฉัน</title></head>
+<body style="max-width:600px;margin:30px auto">
+  <h2>💰 กระเป๋าของฉัน</h2>
+  <button onclick="createWallet()">สร้างที่อยู่ใหม่</button>
+  <div id="list"></div>
+  <script>
+    function t() { return localStorage.token; }
+    async function load() {
+      const r = await fetch("/api/wallet/my", {headers:{Authorization:`Bearer ${t()}`}});
+      document.getElementById("list").innerHTML = (await r.json())
+        .map(w=>`<p>${w.address}<br>${w.label||""}</p>`).join("");
+    }
+    async function createWallet() {
+      await fetch("/api/wallet/create", {
+        method:"POST",
+        headers:{"Content-Type":"application/json",Authorization:`Bearer ${t()}`},
+        body:JSON.stringify({label:"กระเป๋าใหม่"})
+      });
+      load();
+    }
+    load();
+  </script>
+</body>
+</html>
 
