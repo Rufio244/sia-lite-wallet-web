@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>TPS Global USA</title></head>
+<body style="max-width:600px;margin:30px auto">
+  <h2>🌍 TPS Global USA — เชื่อมต่อ</h2>
+  <input id="addr" placeholder="ที่อยู่ Sia" style="width:100%;padding:8px">
+  <input id="amt" type="number" placeholder="จำนวน SC" style="width:100%;padding:8px">
+  <button onclick="send()">ส่งไป TPS</button>
+  <p id="res"></p>
+  <script>
+    function t() { return localStorage.token; }
+    async function send() {
+      const r = await fetch("/api/tps/deposit", {
+        method:"POST",
+        headers:{"Content-Type":"application/json",Authorization:`Bearer ${t()}`},
+        body:JSON.stringify({
+          address:document.getElementById("addr").value,
+          amount:document.getElementById("amt").value
+        })
+      });
+      const d = await r.json();
+      document.getElementById("res").textContent = d.ok ? "✅ สำเร็จ" : "❌ " + d.e;
+    }
+  </script>
+</body>
+</html>
+
