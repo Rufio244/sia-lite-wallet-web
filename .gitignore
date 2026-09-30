@@ -1,4 +1,4 @@
-.DS_Store
+99.DS_Store
 node_modules
 /dist
 
@@ -28,3 +28,10 @@ publish.sh
 #Ignore WASM
 sia.wasm
 wasm_exec.js
+# === เพิ่มตรงนี้ ===
+node_modules/
+.env
+*.key
+seed-*.json
+data/*.db
+dist/
