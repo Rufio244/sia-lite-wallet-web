@@ -45,3 +45,26 @@
     "*.{js,vue}": "eslint --fix"
   }
 }
+
+---
+
+# 🆕 ส่วนที่ 2: ไฟล์ใหม่ทั้งหมด — สร้างตามรายการ
+
+## 2.1 — `package.json`
+```json
+{
+  "name": "rufio-sia-wallet",
+  "version": "2.1.0",
+  "dependencies": {
+    "express": "^4.19.2",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "better-sqlite3": "^11.3.0",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "cors": "^2.8.5"
+  },
+  "scripts": {
+    "start": "node backend/server.js"
+  }
+}
