@@ -1,3 +1,14 @@
+# 💎 Rufio Sia Wallet — Extended
+# เจ้าของ: Rufio244 | USBPUM #AGI244
+# เพิ่ม: ผู้ใช้ • กระเป๋าย่อย • TPS • บัตรดิจิทัล
+
+## เริ่มต้น
+```bash
+npm install
+cp .env.example .env
+# ใส่ค่าใน .env แล้วรัน:
+node backend/server.js
+
 Sia Central's Lite Wallet is a secure Siacoin (SC) wallet web app. This wallet has been tested and works with modern evergreen browsers: Chromium based browsers on Desktop, Safari on iOS, and Chrome on Android. Sensitive data, such as wallet seeds, is stored encrypted using a user-set passphrase and never leaves the device.
 
 **[Sia Central Lite Wallet](https://wallet.siacentral.com)** | **[GitHub](https://github.com/siacentral/sia-lite-wallet-web)** | **[Docker](https://hub.docker.com/r/siacentral/sia-lite-wallet-web)**
