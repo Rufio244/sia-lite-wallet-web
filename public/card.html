@@ -1,1 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>บัตรดิจิทัล</title></head>
+<body style="max-width:500px;margin:30px auto">
+  <h2>💳 บัตรดิจิทัล</h2>
+  <button onclick="issue()">ออกบัตรใหม่</button>
+  <div id="cardDisplay"></div>
+  <script>
+    function t() { return localStorage.token; }
+    async function issue() {
+      const r = await fetch("/api/card/issue", {
+        method:"POST",
+        headers:{"Content-Type":"application/json",Authorization:`Bearer ${t()}`},
+        body:JSON.stringify({limit:1000})
+      });
+      const d = await r.json();
+      document.getElementById("cardDisplay").innerHTML =
+        `<pre>เลขบัตร: ${d.card.number}\nผู้ถือ: ${d.card.holder}</pre>`;
+    }
+  </script>
+</body>
+</html>
 
